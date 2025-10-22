@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: RoomModel.ma
-//Last modified: Wed, Oct 22, 2025 02:59:41 PM
+//Last modified: Wed, Oct 22, 2025 04:02:04 PM
 //Codeset: 1252
 file -rdi 1 -ns "SKnight" -rfn "SKnightRN" -op "v=0;" -typ "mayaAscii" "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/assets/SKnight.ma";
 file -rdi 1 -ns "BookGroup1" -rfn "BookGroup1RN" -op "v=0;" -typ "mayaAscii"
@@ -26,23 +26,23 @@ file -r -ns "Table" -dr 1 -rfn "TableRN" -op "v=0;" -typ "mayaAscii" "C:/Users/1
 file -r -ns "TrashCan" -dr 1 -rfn "TrashCanRN" -op "v=0;" -typ "mayaAscii" "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/assets/TrashCan.ma";
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
-requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
-		 "mtoa" "5.4.5";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiAreaLight"
+		 -nodeType "aiImagerDenoiserOidn" "mtoa" "5.4.5";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "130F1630-4AA6-16F1-B16D-348768A9178E";
+fileInfo "UUID" "DAC595CE-41EF-35FE-BA24-96A7B8B2D49F";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "72E37334-4079-EE02-B601-198787399ECD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 30.833333333333339 42.004284282525425 30.845609029134103 ;
+	setAttr ".t" -type "double3" 30.833333333333332 42.004284282525425 28.934468936186164 ;
 	setAttr ".r" -type "double3" -35.264389682754697 45.000000000000007 -1.7991934265579786e-14 ;
-	setAttr ".rp" -type "double3" -2.2204460492503131e-15 -7.1054273576010019e-15 0 ;
-	setAttr ".rpt" -type "double3" 2.1739493279170756e-14 -3.046055897522796e-14 1.5525151006371737e-14 ;
+	setAttr ".rp" -type "double3" -3.9968028886505635e-15 -7.1054273576010019e-15 0 ;
+	setAttr ".rpt" -type "double3" 2.5054603381688048e-14 -3.219948205524835e-14 2.2416561468509605e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1D71295B-41DE-4C84-F56A-D180BCE5475E";
 	setAttr -k off ".v" no;
@@ -51,7 +51,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 3.5527136788005009e-15 11.170950949192036 0.012275695800777697 ;
+	setAttr ".tp" -type "double3" 0 11.170950949192029 -1.8988643971471539 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C01BB327-4BD2-6587-5326-E086333E8506";
@@ -9710,6 +9710,81 @@ createNode mesh -n "Unit4_CurvesLab:PeaShooterBodyShape" -p "Unit4_CurvesLab:Pea
 		1609 0 
 		1621 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "aiAreaLight1";
+	rename -uid "86E73A0F-479E-9111-930C-7081A5F91B15";
+	setAttr ".t" -type "double3" -1.2056395282450794 18.126494760090267 -12.147564283238445 ;
+	setAttr ".r" -type "double3" -150.61678294671501 28.652369472394646 15.109364380249421 ;
+createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
+	rename -uid "5108FDB3-4211-220F-69B4-F08E20B91B58";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 0.0792 0.1313 0.5783 ;
+	setAttr ".ai_exposure" 14;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "camera1";
+	rename -uid "281510A2-4650-8BC3-1022-018876D6E9FC";
+	setAttr ".t" -type "double3" 24.649951970545924 27.125759223766451 21.792207080523131 ;
+	setAttr ".r" -type "double3" -25.800000000000448 46.800000000000225 0 ;
+	setAttr ".s" -type "double3" 2.7505758644511515 2.7505758644511515 2.7505758644511515 ;
+createNode camera -n "cameraShape1" -p "camera1";
+	rename -uid "62E05B7D-46A5-4119-C8A3-1D820713AAAF";
+	setAttr -k off ".v";
+	setAttr ".rnd" no;
+	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
+	setAttr ".ff" 0;
+	setAttr ".coi" 34.577010731362428;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "camera1";
+	setAttr ".den" -type "string" "camera1_depth";
+	setAttr ".man" -type "string" "camera1_mask";
+createNode transform -n "aiAreaLight2";
+	rename -uid "9926A207-4375-05CD-6AAC-CEAB7CB7A1C3";
+	setAttr ".t" -type "double3" 7.8500758336306875 13.609436134929396 -7.1559077644056011 ;
+	setAttr ".r" -type "double3" 91.295652358855676 0 0 ;
+	setAttr ".s" -type "double3" 0.60145460167510023 0.60145460167510023 0.60145460167510023 ;
+createNode aiAreaLight -n "aiAreaLightShape2" -p "aiAreaLight2";
+	rename -uid "48A919ED-4C17-3DFE-3815-7D8D8F606D20";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 1 0.9903 0 ;
+	setAttr ".ai_exposure" 7;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "aiAreaLight3";
+	rename -uid "777AFE95-4D4C-4687-F7AE-F9BAE8EADDE7";
+	setAttr ".t" -type "double3" 7.8500758336306875 13.609436134929396 -7.1559077644056011 ;
+	setAttr ".r" -type "double3" 271.81887597603054 0 0 ;
+	setAttr ".s" -type "double3" 0.60145460167510023 0.60145460167510023 0.60145460167510023 ;
+createNode aiAreaLight -n "aiAreaLightShape3" -p "aiAreaLight3";
+	rename -uid "8A44A4F5-4C66-8792-2EE5-1A8233470B42";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 1 0.9903 0 ;
+	setAttr ".ai_exposure" 7;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "aiAreaLight4";
+	rename -uid "091E8F9C-46B2-8059-89A3-E48F88AA67C7";
+	setAttr ".t" -type "double3" -2.9514462900495451 10.29027155806501 -6.7745927265056256 ;
+	setAttr ".r" -type "double3" -92.144693649936897 27.653972498106739 1.0905099536973919 ;
+	setAttr ".s" -type "double3" 0.57729662931620196 0.15205988963485023 0.53941665639033187 ;
+createNode aiAreaLight -n "aiAreaLightShape4" -p "aiAreaLight4";
+	rename -uid "27C40D8D-41B0-9CF2-C346-8DB7E9CF2583";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 0.2145517 0.73400003 0.173958 ;
+	setAttr ".ai_exposure" 6;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "2B777EF3-4317-FE44-DBD0-4A9FE314F9F6";
 	setAttr -s 5 ".lnk";
@@ -9781,7 +9856,9 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "FB88F60B-4192-C0FB-7CC3-85AC94A041F3";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.4.5";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "D6B0F442-4366-2915-3DDF-078F93C5362B";
 	setAttr ".ai_translator" -type "string" "gaussian";
@@ -9805,24 +9882,29 @@ createNode reference -n "SKnightRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"SKnightRN"
 		"SKnightRN" 0
-		"SKnightRN" 3
+		"SKnightRN" 4
 		2 "SKnight:HollowColors" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/HollowKnightColors.png\""
 		
 		2 "SKnight:HollowColors" "preFilter" " 0"
-		2 "SKnight:HollowColors" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "SKnight:HollowColors" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "SKnight:HollowColors.outTransparency" ":lambert1.transparency" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "BookGroup1RN";
 	rename -uid "357C3DA7-491F-BE4B-BAEC-319BAE72A3D0";
+	setAttr ".phl[1]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BookGroup1RN"
 		"BookGroup1RN" 0
-		"BookGroup1RN" 4
+		"BookGroup1RN" 6
 		2 "BookGroup1:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "BookGroup1:file1" "colorSpace" " -type \"string\" \"sRGB\""
 		2 "BookGroup1:file1" "viewNameUsed" " 0"
-		2 "BookGroup1:file1" "viewNameStr" " -type \"string\" \"<N/A>\"";
+		2 "BookGroup1:file1" "viewNameStr" " -type \"string\" \"<N/A>\""
+		3 "BookGroup1:file1.message" ":initialMaterialInfo.texture" "-na"
+		5 3 "BookGroup1RN" "BookGroup1:file1.message" "BookGroup1RN.placeHolderList[1]" 
+		":initialMaterialInfo.t";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "BookGroup2RN";
@@ -9830,10 +9912,11 @@ createNode reference -n "BookGroup2RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BookGroup2RN"
 		"BookGroup2RN" 0
-		"BookGroup2RN" 2
+		"BookGroup2RN" 3
 		2 "BookGroup2:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
-		2 "BookGroup2:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "BookGroup2:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "BookGroup2:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "BookshelfRN";
@@ -9841,10 +9924,11 @@ createNode reference -n "BookshelfRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BookshelfRN"
 		"BookshelfRN" 0
-		"BookshelfRN" 2
+		"BookshelfRN" 3
 		2 "Bookshelf:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
-		2 "Bookshelf:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "Bookshelf:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "Bookshelf:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "FloorPlanksRN";
@@ -9859,10 +9943,11 @@ createNode reference -n "LampRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"LampRN"
 		"LampRN" 0
-		"LampRN" 2
+		"LampRN" 3
 		2 "Lamp:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
-		2 "Lamp:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "Lamp:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "Lamp:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "StoolRN";
@@ -9870,10 +9955,11 @@ createNode reference -n "StoolRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"StoolRN"
 		"StoolRN" 0
-		"StoolRN" 2
+		"StoolRN" 3
 		2 "Stool:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
-		2 "Stool:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "Stool:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "Stool:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "TableRN";
@@ -9881,10 +9967,11 @@ createNode reference -n "TableRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TableRN"
 		"TableRN" 0
-		"TableRN" 2
+		"TableRN" 3
 		2 "Table:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
-		2 "Table:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "Table:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "Table:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "TrashCanRN";
@@ -9892,13 +9979,14 @@ createNode reference -n "TrashCanRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TrashCanRN"
 		"TrashCanRN" 0
-		"TrashCanRN" 4
+		"TrashCanRN" 5
 		2 "TrashCan:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "TrashCan:file1" "colorSpace" " -type \"string\" \"sRGB\""
 		2 "TrashCan:file2" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
-		2 "TrashCan:file2" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "TrashCan:file2" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "TrashCan:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "_UNKNOWN_REF_NODE_";
@@ -9963,6 +10051,8 @@ select -ne :defaultRenderUtilityList1;
 	setAttr -s 13 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 9 ".r";
+select -ne :lightList1;
+	setAttr -s 4 ".l";
 select -ne :defaultTextureList1;
 	setAttr -s 13 ".tx";
 select -ne :lambert1;
@@ -9975,13 +10065,18 @@ select -ne :initialShadingGroup;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :initialMaterialInfo;
-	setAttr -s 9 ".t";
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
+	setAttr ".w" 940;
 	setAttr ".pa" 1;
+	setAttr ".dar" 1.7407407760620117;
+select -ne :defaultLightSet;
+	setAttr -s 4 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -9994,6 +10089,7 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+connectAttr "BookGroup1RN.phl[1]" ":initialMaterialInfo.t" -na;
 connectAttr "groupId1.id" "WallShape2.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "WallShape2.iog.og[0].gco";
 connectAttr "groupId2.id" "WallShape2.iog.og[1].gid";
@@ -10105,6 +10201,10 @@ connectAttr "Unit4_CurvesLab:place2dTexture1.msg" ":defaultRenderUtilityList1.u"
 		 -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "aiAreaLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "aiAreaLightShape2.ltd" ":lightList1.l" -na;
+connectAttr "aiAreaLightShape3.ltd" ":lightList1.l" -na;
+connectAttr "aiAreaLightShape4.ltd" ":lightList1.l" -na;
 connectAttr "Unit5_LabScene:file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Unit4_CurvesLab:file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
@@ -10115,6 +10215,8 @@ connectAttr "WallShape2.iog.og[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "Unit5_LabScene:DeskLampShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
-connectAttr "Unit5_LabScene:file1.msg" ":initialMaterialInfo.t" -na;
-connectAttr "Unit4_CurvesLab:file1.msg" ":initialMaterialInfo.t" -na;
+connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "aiAreaLight2.iog" ":defaultLightSet.dsm" -na;
+connectAttr "aiAreaLight3.iog" ":defaultLightSet.dsm" -na;
+connectAttr "aiAreaLight4.iog" ":defaultLightSet.dsm" -na;
 // End of RoomModel.ma
