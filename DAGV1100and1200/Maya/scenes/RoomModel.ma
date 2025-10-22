@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: RoomModel.ma
-//Last modified: Wed, Oct 22, 2025 04:02:04 PM
+//Last modified: Wed, Oct 22, 2025 04:26:11 PM
 //Codeset: 1252
 file -rdi 1 -ns "SKnight" -rfn "SKnightRN" -op "v=0;" -typ "mayaAscii" "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/assets/SKnight.ma";
 file -rdi 1 -ns "BookGroup1" -rfn "BookGroup1RN" -op "v=0;" -typ "mayaAscii"
@@ -34,15 +34,15 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "DAC595CE-41EF-35FE-BA24-96A7B8B2D49F";
+fileInfo "UUID" "D6C37A3D-4609-5A4D-1359-FFB68A89A7ED";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "72E37334-4079-EE02-B601-198787399ECD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 30.833333333333332 42.004284282525425 28.934468936186164 ;
+	setAttr ".t" -type "double3" 30.833333333333339 42.004284282525433 28.934468936186171 ;
 	setAttr ".r" -type "double3" -35.264389682754697 45.000000000000007 -1.7991934265579786e-14 ;
-	setAttr ".rp" -type "double3" -3.9968028886505635e-15 -7.1054273576010019e-15 0 ;
-	setAttr ".rpt" -type "double3" 2.5054603381688048e-14 -3.219948205524835e-14 2.2416561468509605e-14 ;
+	setAttr ".rp" -type "double3" -2.6645352591003757e-15 -1.0658141036401503e-14 7.1054273576010019e-15 ;
+	setAttr ".rpt" -type "double3" 3.021710091084426e-14 -2.7445226550585365e-14 1.9921788319194537e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1D71295B-41DE-4C84-F56A-D180BCE5475E";
 	setAttr -k off ".v" no;
@@ -51,7 +51,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 11.170950949192029 -1.8988643971471539 ;
+	setAttr ".tp" -type "double3" 3.5527136788005009e-15 11.170950949192036 -1.8988643971471468 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C01BB327-4BD2-6587-5326-E086333E8506";
@@ -105,7 +105,84 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Floor";
+createNode transform -n "aiAreaLight1";
+	rename -uid "86E73A0F-479E-9111-930C-7081A5F91B15";
+	setAttr ".t" -type "double3" -1.2056395282450794 18.126494760090267 -12.147564283238445 ;
+	setAttr ".r" -type "double3" -150.61678294671501 28.652369472394646 15.109364380249421 ;
+createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
+	rename -uid "5108FDB3-4211-220F-69B4-F08E20B91B58";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 0.0792 0.1313 0.5783 ;
+	setAttr ".ai_exposure" 14;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "camera1";
+	rename -uid "281510A2-4650-8BC3-1022-018876D6E9FC";
+	setAttr ".t" -type "double3" 24.649951970545924 27.125759223766451 21.792207080523131 ;
+	setAttr ".r" -type "double3" -25.800000000000448 46.800000000000225 0 ;
+	setAttr ".s" -type "double3" 2.7505758644511515 2.7505758644511515 2.7505758644511515 ;
+createNode camera -n "cameraShape1" -p "camera1";
+	rename -uid "62E05B7D-46A5-4119-C8A3-1D820713AAAF";
+	setAttr -k off ".v";
+	setAttr ".rnd" no;
+	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
+	setAttr ".ff" 0;
+	setAttr ".coi" 34.577010731362428;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "camera1";
+	setAttr ".den" -type "string" "camera1_depth";
+	setAttr ".man" -type "string" "camera1_mask";
+createNode transform -n "aiAreaLight2";
+	rename -uid "9926A207-4375-05CD-6AAC-CEAB7CB7A1C3";
+	setAttr ".t" -type "double3" 7.8500758336306875 13.609436134929396 -7.1559077644056011 ;
+	setAttr ".r" -type "double3" 91.295652358855676 0 0 ;
+	setAttr ".s" -type "double3" 0.60145460167510023 0.60145460167510023 0.60145460167510023 ;
+createNode aiAreaLight -n "aiAreaLightShape2" -p "aiAreaLight2";
+	rename -uid "48A919ED-4C17-3DFE-3815-7D8D8F606D20";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 1 0.9903 0 ;
+	setAttr ".ai_exposure" 7;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "aiAreaLight3";
+	rename -uid "777AFE95-4D4C-4687-F7AE-F9BAE8EADDE7";
+	setAttr ".t" -type "double3" 7.8500758336306875 13.609436134929396 -7.1559077644056011 ;
+	setAttr ".r" -type "double3" 271.81887597603054 0 0 ;
+	setAttr ".s" -type "double3" 0.60145460167510023 0.60145460167510023 0.60145460167510023 ;
+createNode aiAreaLight -n "aiAreaLightShape3" -p "aiAreaLight3";
+	rename -uid "8A44A4F5-4C66-8792-2EE5-1A8233470B42";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 1 0.9903 0 ;
+	setAttr ".ai_exposure" 7;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "aiAreaLight4";
+	rename -uid "091E8F9C-46B2-8059-89A3-E48F88AA67C7";
+	setAttr ".t" -type "double3" -2.9514462900495451 10.29027155806501 -6.7745927265056256 ;
+	setAttr ".r" -type "double3" -92.144693649936897 27.653972498106739 1.0905099536973919 ;
+	setAttr ".s" -type "double3" 0.57729662931620196 0.15205988963485023 0.53941665639033187 ;
+createNode aiAreaLight -n "aiAreaLightShape4" -p "aiAreaLight4";
+	rename -uid "27C40D8D-41B0-9CF2-C346-8DB7E9CF2583";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -k off ".v";
+	setAttr ".csh" no;
+	setAttr ".rcsh" no;
+	setAttr ".sc" -type "float3" 0.2145517 0.73400003 0.173958 ;
+	setAttr ".ai_exposure" 6;
+	setAttr ".ai_translator" -type "string" "quad";
+	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
+createNode transform -n "group1";
+	rename -uid "78E7E543-49E9-3A62-3D18-A29CD10E7843";
+createNode transform -n "Floor" -p "group1";
 	rename -uid "97052F16-4A6A-5333-ACDF-6B97798C3C3E";
 	setAttr ".rp" -type "double3" 0 0.5530301348663258 0 ;
 	setAttr ".sp" -type "double3" 0 0.5530301348663258 0 ;
@@ -159,7 +236,7 @@ createNode mesh -n "FloorShape" -p "Floor";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Wall";
+createNode transform -n "Wall" -p "group1";
 	rename -uid "EB3D9E01-4840-1668-40D9-6B8CB26D1CF9";
 	setAttr ".rp" -type "double3" -9.5878943529436782 1.603403846086898 0.024551584772052104 ;
 	setAttr ".sp" -type "double3" -9.5878943529436782 1.603403846086898 0.024551584772052104 ;
@@ -302,7 +379,7 @@ createNode mesh -n "WallShape" -p "Wall";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Wall2";
+createNode transform -n "Wall2" -p "group1";
 	rename -uid "4911CE21-467E-6F03-66B4-22BD1FC03098";
 	setAttr ".rp" -type "double3" 0 1.603403846086898 -9.588 ;
 	setAttr ".sp" -type "double3" 0 1.603403846086898 -9.588 ;
@@ -595,7 +672,7 @@ createNode mesh -n "WallShape2" -p "Wall2";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Unit5_LabScene:Desk_Lamp";
+createNode transform -n "Unit5_LabScene:Desk_Lamp" -p "group1";
 	rename -uid "D2377F43-4EB9-2F0D-09F0-CFAAE5E25CBF";
 	setAttr ".t" -type "double3" -2.9269934383154053 7.2868825509932886 -6.9753370936453969 ;
 	setAttr ".r" -type "double3" 0 117.7461539616784 0 ;
@@ -6022,7 +6099,7 @@ createNode nurbsCurve -n "Unit5_LabScene:curveShape1" -p "Unit5_LabScene:curve1"
 		-0.501945026576466 8.7883883982196593 -3.7674760733353011e-07
 		-0.50860996154586191 8.4497638149258094 -3.7674760733352725e-07
 		;
-createNode transform -n "Unit4_CurvesLab:Peashooter";
+createNode transform -n "Unit4_CurvesLab:Peashooter" -p "group1";
 	rename -uid "A64F4268-4E8B-613C-41F3-E793BE230A61";
 	setAttr ".t" -type "double3" 5.0775781386721572 2.0721661105668301 -6.1989348282915229 ;
 	setAttr ".r" -type "double3" 0 -117.94240386893884 0 ;
@@ -6123,7 +6200,7 @@ createNode nurbsCurve -n "Unit4_CurvesLab:curveShape6" -p "Unit4_CurvesLab:curve
 		-0.13611430904464528 4.2119913158059177 -1.9220478685600411
 		-0.077447276107425522 3.2905592007053146 -0.5524699913063339
 		;
-createNode transform -n "Unit4_CurvesLab:PeaShooterBody1";
+createNode transform -n "Unit4_CurvesLab:PeaShooterBody1" -p "group1";
 	rename -uid "5DCC1B17-4AD0-7B7C-D159-31B0A03FCA2F";
 	setAttr ".t" -type "double3" 5.0775781386721572 2.0721661105668301 -6.1989348282915229 ;
 	setAttr ".r" -type "double3" 0 -117.94240386893884 0 ;
@@ -9710,85 +9787,10 @@ createNode mesh -n "Unit4_CurvesLab:PeaShooterBodyShape" -p "Unit4_CurvesLab:Pea
 		1609 0 
 		1621 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "aiAreaLight1";
-	rename -uid "86E73A0F-479E-9111-930C-7081A5F91B15";
-	setAttr ".t" -type "double3" -1.2056395282450794 18.126494760090267 -12.147564283238445 ;
-	setAttr ".r" -type "double3" -150.61678294671501 28.652369472394646 15.109364380249421 ;
-createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
-	rename -uid "5108FDB3-4211-220F-69B4-F08E20B91B58";
-	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
-	setAttr -k off ".v";
-	setAttr ".csh" no;
-	setAttr ".rcsh" no;
-	setAttr ".sc" -type "float3" 0.0792 0.1313 0.5783 ;
-	setAttr ".ai_exposure" 14;
-	setAttr ".ai_translator" -type "string" "quad";
-	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
-createNode transform -n "camera1";
-	rename -uid "281510A2-4650-8BC3-1022-018876D6E9FC";
-	setAttr ".t" -type "double3" 24.649951970545924 27.125759223766451 21.792207080523131 ;
-	setAttr ".r" -type "double3" -25.800000000000448 46.800000000000225 0 ;
-	setAttr ".s" -type "double3" 2.7505758644511515 2.7505758644511515 2.7505758644511515 ;
-createNode camera -n "cameraShape1" -p "camera1";
-	rename -uid "62E05B7D-46A5-4119-C8A3-1D820713AAAF";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
-	setAttr ".ff" 0;
-	setAttr ".coi" 34.577010731362428;
-	setAttr ".ow" 30;
-	setAttr ".imn" -type "string" "camera1";
-	setAttr ".den" -type "string" "camera1_depth";
-	setAttr ".man" -type "string" "camera1_mask";
-createNode transform -n "aiAreaLight2";
-	rename -uid "9926A207-4375-05CD-6AAC-CEAB7CB7A1C3";
-	setAttr ".t" -type "double3" 7.8500758336306875 13.609436134929396 -7.1559077644056011 ;
-	setAttr ".r" -type "double3" 91.295652358855676 0 0 ;
-	setAttr ".s" -type "double3" 0.60145460167510023 0.60145460167510023 0.60145460167510023 ;
-createNode aiAreaLight -n "aiAreaLightShape2" -p "aiAreaLight2";
-	rename -uid "48A919ED-4C17-3DFE-3815-7D8D8F606D20";
-	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
-	setAttr -k off ".v";
-	setAttr ".csh" no;
-	setAttr ".rcsh" no;
-	setAttr ".sc" -type "float3" 1 0.9903 0 ;
-	setAttr ".ai_exposure" 7;
-	setAttr ".ai_translator" -type "string" "quad";
-	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
-createNode transform -n "aiAreaLight3";
-	rename -uid "777AFE95-4D4C-4687-F7AE-F9BAE8EADDE7";
-	setAttr ".t" -type "double3" 7.8500758336306875 13.609436134929396 -7.1559077644056011 ;
-	setAttr ".r" -type "double3" 271.81887597603054 0 0 ;
-	setAttr ".s" -type "double3" 0.60145460167510023 0.60145460167510023 0.60145460167510023 ;
-createNode aiAreaLight -n "aiAreaLightShape3" -p "aiAreaLight3";
-	rename -uid "8A44A4F5-4C66-8792-2EE5-1A8233470B42";
-	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
-	setAttr -k off ".v";
-	setAttr ".csh" no;
-	setAttr ".rcsh" no;
-	setAttr ".sc" -type "float3" 1 0.9903 0 ;
-	setAttr ".ai_exposure" 7;
-	setAttr ".ai_translator" -type "string" "quad";
-	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
-createNode transform -n "aiAreaLight4";
-	rename -uid "091E8F9C-46B2-8059-89A3-E48F88AA67C7";
-	setAttr ".t" -type "double3" -2.9514462900495451 10.29027155806501 -6.7745927265056256 ;
-	setAttr ".r" -type "double3" -92.144693649936897 27.653972498106739 1.0905099536973919 ;
-	setAttr ".s" -type "double3" 0.57729662931620196 0.15205988963485023 0.53941665639033187 ;
-createNode aiAreaLight -n "aiAreaLightShape4" -p "aiAreaLight4";
-	rename -uid "27C40D8D-41B0-9CF2-C346-8DB7E9CF2583";
-	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
-	setAttr -k off ".v";
-	setAttr ".csh" no;
-	setAttr ".rcsh" no;
-	setAttr ".sc" -type "float3" 0.2145517 0.73400003 0.173958 ;
-	setAttr ".ai_exposure" 6;
-	setAttr ".ai_translator" -type "string" "quad";
-	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "2B777EF3-4317-FE44-DBD0-4A9FE314F9F6";
-	setAttr -s 5 ".lnk";
-	setAttr -s 5 ".slnk";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "5CADEAE4-498E-1F0E-9F13-8B89C333A9B7";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -9882,7 +9884,8 @@ createNode reference -n "SKnightRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"SKnightRN"
 		"SKnightRN" 0
-		"SKnightRN" 4
+		"SKnightRN" 5
+		0 "|SKnight:HollowKnight" "|group1" "-s -r "
 		2 "SKnight:HollowColors" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/HollowKnightColors.png\""
 		
 		2 "SKnight:HollowColors" "preFilter" " 0"
@@ -9892,101 +9895,487 @@ createNode reference -n "SKnightRN";
 lockNode -l 1 ;
 createNode reference -n "BookGroup1RN";
 	rename -uid "357C3DA7-491F-BE4B-BAEC-319BAE72A3D0";
+	setAttr -s 9 ".phl";
 	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BookGroup1RN"
 		"BookGroup1RN" 0
-		"BookGroup1RN" 6
+		"BookGroup1RN" 22
+		0 "|BookGroup1:Book" "|group1" "-s -r "
+		0 "|BookGroup1:Book1" "|group1" "-s -r "
+		0 "|BookGroup1:Book2" "|group1" "-s -r "
+		0 "|BookGroup1:Book3" "|group1" "-s -r "
 		2 "BookGroup1:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "BookGroup1:file1" "colorSpace" " -type \"string\" \"sRGB\""
 		2 "BookGroup1:file1" "viewNameUsed" " 0"
 		2 "BookGroup1:file1" "viewNameStr" " -type \"string\" \"<N/A>\""
+		3 "|group1|BookGroup1:Book|BookGroup1:BookShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|group1|BookGroup1:Book2|BookGroup1:Book2Shape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|group1|BookGroup1:Book3|BookGroup1:Book3Shape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|group1|BookGroup1:Book1|BookGroup1:Book1Shape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
 		3 "BookGroup1:file1.message" ":initialMaterialInfo.texture" "-na"
-		5 3 "BookGroup1RN" "BookGroup1:file1.message" "BookGroup1RN.placeHolderList[1]" 
-		":initialMaterialInfo.t";
+		5 3 "BookGroup1RN" "|group1|BookGroup1:Book|BookGroup1:BookShape.instObjGroups" 
+		"BookGroup1RN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup1RN" "|group1|BookGroup1:Book1|BookGroup1:Book1Shape.instObjGroups" 
+		"BookGroup1RN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup1RN" "|group1|BookGroup1:Book2|BookGroup1:Book2Shape.instObjGroups" 
+		"BookGroup1RN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup1RN" "|group1|BookGroup1:Book3|BookGroup1:Book3Shape.instObjGroups" 
+		"BookGroup1RN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup1RN" "BookGroup1:file1.message" "BookGroup1RN.placeHolderList[5]" 
+		":initialMaterialInfo.t"
+		5 3 "BookGroup1RN" "BookGroup1:file1.message" "BookGroup1RN.placeHolderList[6]" 
+		":initialMaterialInfo.t"
+		5 3 "BookGroup1RN" "BookGroup1:file1.message" "BookGroup1RN.placeHolderList[7]" 
+		":initialMaterialInfo.t"
+		5 3 "BookGroup1RN" "BookGroup1:file1.outColor" "BookGroup1RN.placeHolderList[8]" 
+		""
+		5 3 "BookGroup1RN" "BookGroup1:place2dTexture1.message" "BookGroup1RN.placeHolderList[9]" 
+		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "BookGroup2RN";
 	rename -uid "E8CD72B4-4BE4-9F94-DBBA-F8B5A8CD9CD9";
+	setAttr -s 10 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BookGroup2RN"
 		"BookGroup2RN" 0
-		"BookGroup2RN" 3
+		"BookGroup2RN" 24
+		0 "|BookGroup2:BookGroup1" "|group1" "-s -r "
 		2 "BookGroup2:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "BookGroup2:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "BookGroup2:file1.message" ":initialMaterialInfo.texture" "-na";
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book5|BookGroup2:Book5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book6|BookGroup2:Book6Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book4|BookGroup2:Book4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book9|BookGroup2:Book9Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book7|BookGroup2:Book7Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book13|BookGroup2:Book13Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "BookGroup2:file1.message" ":initialMaterialInfo.texture" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book10|BookGroup2:Book10Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book11|BookGroup2:Book11Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book8|BookGroup2:Book8Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|BookGroup2:BookGroup1|BookGroup2:Book12|BookGroup2:Book12Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book4|BookGroup2:Book4Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book5|BookGroup2:Book5Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book6|BookGroup2:Book6Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book7|BookGroup2:Book7Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book8|BookGroup2:Book8Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book9|BookGroup2:Book9Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[6]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book10|BookGroup2:Book10Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[7]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book11|BookGroup2:Book11Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[8]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book12|BookGroup2:Book12Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[9]" ":initialShadingGroup.dsm"
+		5 3 "BookGroup2RN" "|group1|BookGroup2:BookGroup1|BookGroup2:Book13|BookGroup2:Book13Shape.instObjGroups" 
+		"BookGroup2RN.placeHolderList[10]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "BookshelfRN";
 	rename -uid "0C23970A-4F3B-A6D7-2B44-55A5B61647CE";
+	setAttr ".phl[1]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BookshelfRN"
 		"BookshelfRN" 0
-		"BookshelfRN" 3
+		"BookshelfRN" 6
+		0 "|Bookshelf:Bookshelf" "|group1" "-s -r "
 		2 "Bookshelf:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "Bookshelf:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "Bookshelf:file1.message" ":initialMaterialInfo.texture" "-na";
+		3 "|group1|Bookshelf:Bookshelf|Bookshelf:BookshelfShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "Bookshelf:file1.message" ":initialMaterialInfo.texture" "-na"
+		5 3 "BookshelfRN" "|group1|Bookshelf:Bookshelf|Bookshelf:BookshelfShape.instObjGroups" 
+		"BookshelfRN.placeHolderList[1]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "FloorPlanksRN";
 	rename -uid "7AD41122-4E53-0810-D35F-31BC06515960";
+	setAttr -s 50 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"FloorPlanksRN"
-		"FloorPlanksRN" 0;
+		"FloorPlanksRN" 0
+		"FloorPlanksRN" 101
+		0 "|FloorPlanks:Floor_Planks" "|group1" "-s -r "
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankB3|FloorPlanks:PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankA2|FloorPlanks:PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankA1|FloorPlanks:PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankB1|FloorPlanks:PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankB2|FloorPlanks:PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankA1|FloorPlanks:PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankA2|FloorPlanks:PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankB1|FloorPlanks:PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankB2|FloorPlanks:PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:PlankB3|FloorPlanks:PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[6]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[7]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[8]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[9]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[10]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[11]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[12]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[13]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[14]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group1|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[15]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[16]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[17]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[18]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[19]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group2|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[20]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[21]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[22]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[23]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[24]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group3|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[25]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[26]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[27]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[28]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[29]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group4|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[30]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[31]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[32]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[33]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[34]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group5|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[35]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[36]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[37]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[38]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[39]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group6|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[40]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[41]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[42]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[43]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[44]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group7|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[45]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankA1|FloorPlanks:pasted__PlankA1Shape.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[46]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankA2|FloorPlanks:pasted__PlankAShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[47]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankB1|FloorPlanks:pasted__PlankBShape1.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[48]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankB2|FloorPlanks:pasted__PlankBShape2.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[49]" ":initialShadingGroup.dsm"
+		5 3 "FloorPlanksRN" "|group1|FloorPlanks:Floor_Planks|FloorPlanks:group8|FloorPlanks:pasted__PlankB3|FloorPlanks:pasted__PlankBShape3.instObjGroups" 
+		"FloorPlanksRN.placeHolderList[50]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "LampRN";
 	rename -uid "3FEAB0B8-4B3A-C7FC-712E-55B6346C155D";
+	setAttr -s 2 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"LampRN"
 		"LampRN" 0
-		"LampRN" 3
+		"LampRN" 9
+		0 "|Lamp:Lamp_Post" "|group1" "-s -r "
+		0 "|Lamp:Lamp_Shade" "|group1" "-s -r "
 		2 "Lamp:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "Lamp:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "Lamp:file1.message" ":initialMaterialInfo.texture" "-na";
+		3 "|group1|Lamp:Lamp_Post|Lamp:Lamp_PostShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "Lamp:file1.message" ":initialMaterialInfo.texture" "-na"
+		3 "|group1|Lamp:Lamp_Shade|Lamp:Lamp_ShadeShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		5 3 "LampRN" "|group1|Lamp:Lamp_Post|Lamp:Lamp_PostShape.instObjGroups" 
+		"LampRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "LampRN" "|group1|Lamp:Lamp_Shade|Lamp:Lamp_ShadeShape.instObjGroups" 
+		"LampRN.placeHolderList[2]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "StoolRN";
 	rename -uid "124D81DA-479E-4777-3393-268569532175";
+	setAttr ".phl[1]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"StoolRN"
 		"StoolRN" 0
-		"StoolRN" 3
+		"StoolRN" 6
+		0 "|Stool:Stool" "|group1" "-s -r "
 		2 "Stool:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "Stool:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "Stool:file1.message" ":initialMaterialInfo.texture" "-na";
+		3 "|group1|Stool:Stool|Stool:StoolShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "Stool:file1.message" ":initialMaterialInfo.texture" "-na"
+		5 3 "StoolRN" "|group1|Stool:Stool|Stool:StoolShape.instObjGroups" "StoolRN.placeHolderList[1]" 
+		":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "TableRN";
 	rename -uid "4622C32C-43AF-234E-2F46-468CE3E31DC7";
+	setAttr ".phl[1]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TableRN"
 		"TableRN" 0
-		"TableRN" 3
+		"TableRN" 6
+		0 "|Table:Table" "|group1" "-s -r "
 		2 "Table:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "Table:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "Table:file1.message" ":initialMaterialInfo.texture" "-na";
+		3 "Table:file1.message" ":initialMaterialInfo.texture" "-na"
+		3 "|group1|Table:Table|Table:TableShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		5 3 "TableRN" "|group1|Table:Table|Table:TableShape.instObjGroups" "TableRN.placeHolderList[1]" 
+		":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "TrashCanRN";
 	rename -uid "77DE06CB-4F58-3827-A0D7-DBBDF190BE26";
+	setAttr -s 3 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TrashCanRN"
 		"TrashCanRN" 0
-		"TrashCanRN" 5
+		"TrashCanRN" 10
+		0 "|TrashCan:TrashCan" "|group1" "-s -r "
 		2 "TrashCan:file1" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "TrashCan:file1" "colorSpace" " -type \"string\" \"sRGB\""
 		2 "TrashCan:file2" "fileTextureName" " -type \"string\" \"C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Colors.png\""
 		
 		2 "TrashCan:file2" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "TrashCan:file1.message" ":initialMaterialInfo.texture" "-na";
+		3 "TrashCan:file1.message" ":initialMaterialInfo.texture" "-na"
+		3 "|group1|TrashCan:TrashCan|TrashCan:TrashCanShape.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		5 3 "TrashCanRN" "|group1|TrashCan:TrashCan|TrashCan:TrashCanShape.instObjGroups" 
+		"TrashCanRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "TrashCanRN" "TrashCan:file1.message" "TrashCanRN.placeHolderList[2]" 
+		":initialMaterialInfo.t"
+		5 3 "TrashCanRN" "TrashCan:place2dTexture1.message" "TrashCanRN.placeHolderList[3]" 
+		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "_UNKNOWN_REF_NODE_";
@@ -10030,6 +10419,43 @@ createNode file -n "file1";
 	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
 createNode place2dTexture -n "place2dTexture1";
 	rename -uid "A7CC0953-4282-DCF0-2A4F-59809281E641";
+createNode lambert -n "lambert3";
+	rename -uid "7C884393-4645-C0BE-0BF7-FC8D42C1FEB6";
+createNode shadingEngine -n "lambert3SG";
+	rename -uid "9B541407-4B09-323A-B773-8C9F4F11C52C";
+	setAttr ".ihi" 0;
+	setAttr -s 75 ".dsm";
+	setAttr ".ro" yes;
+	setAttr -s 2 ".gn";
+createNode materialInfo -n "materialInfo2";
+	rename -uid "1DA8A952-482C-A791-8EF7-36B4966FCFCF";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "3A7300BB-40B1-1FB0-518D-20B82A617B45";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -255.95237078174759 -827.35798372488352 ;
+	setAttr ".tgi[0].vh" -type "double2" 822.61901493110486 269.02467257772258 ;
+	setAttr -s 7 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 165.71427917480469;
+	setAttr ".tgi[0].ni[0].y" -121.42857360839844;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -141.42857360839844;
+	setAttr ".tgi[0].ni[1].y" 31.428571701049805;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" -141.42857360839844;
+	setAttr ".tgi[0].ni[2].y" -144.28572082519531;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" 497.83529663085938;
+	setAttr ".tgi[0].ni[3].y" 114.66032409667969;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" 165.71427917480469;
+	setAttr ".tgi[0].ni[4].y" 54.285713195800781;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" 514.416748046875;
+	setAttr ".tgi[0].ni[5].y" -230.90431213378906;
+	setAttr ".tgi[0].ni[5].nvs" 2387;
+	setAttr ".tgi[0].ni[6].x" 82.461769104003906;
+	setAttr ".tgi[0].ni[6].y" -427.59390258789062;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -10041,10 +10467,10 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 5 ".st";
+	setAttr -s 6 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 7 ".s";
+	setAttr -s 8 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -10059,9 +10485,7 @@ select -ne :lambert1;
 select -ne :standardSurface1;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 75 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 2 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :initialMaterialInfo;
@@ -10089,17 +10513,99 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "BookGroup1RN.phl[1]" ":initialMaterialInfo.t" -na;
+connectAttr "BookGroup1RN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup1RN.phl[2]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup1RN.phl[3]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup1RN.phl[4]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup1RN.phl[5]" ":initialMaterialInfo.t" -na;
+connectAttr "BookGroup1RN.phl[6]" "materialInfo2.t" -na;
+connectAttr "BookGroup1RN.phl[7]" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "BookGroup1RN.phl[8]" "lambert3.c";
+connectAttr "BookGroup1RN.phl[9]" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "BookGroup2RN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[2]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[3]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[4]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[5]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[6]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[7]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[8]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[9]" "lambert3SG.dsm" -na;
+connectAttr "BookGroup2RN.phl[10]" "lambert3SG.dsm" -na;
+connectAttr "BookshelfRN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[2]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[3]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[4]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[5]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[6]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[7]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[8]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[9]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[10]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[11]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[12]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[13]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[14]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[15]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[16]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[17]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[18]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[19]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[20]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[21]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[22]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[23]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[24]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[25]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[26]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[27]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[28]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[29]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[30]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[31]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[32]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[33]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[34]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[35]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[36]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[37]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[38]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[39]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[40]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[41]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[42]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[43]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[44]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[45]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[46]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[47]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[48]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[49]" "lambert3SG.dsm" -na;
+connectAttr "FloorPlanksRN.phl[50]" "lambert3SG.dsm" -na;
+connectAttr "LampRN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "LampRN.phl[2]" "lambert3SG.dsm" -na;
+connectAttr "StoolRN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "TableRN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "TrashCanRN.phl[1]" "lambert3SG.dsm" -na;
+connectAttr "TrashCanRN.phl[2]" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "TrashCanRN.phl[3]" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
 connectAttr "groupId1.id" "WallShape2.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "WallShape2.iog.og[0].gco";
+connectAttr "lambert3SG.mwc" "WallShape2.iog.og[0].gco";
 connectAttr "groupId2.id" "WallShape2.iog.og[1].gid";
-connectAttr ":initialShadingGroup.mwc" "WallShape2.iog.og[1].gco";
+connectAttr "lambert3SG.mwc" "WallShape2.iog.og[1].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "lambert3SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
@@ -10193,8 +10699,26 @@ connectAttr "place2dTexture1.vt3" "file1.vt3";
 connectAttr "place2dTexture1.vc1" "file1.vc1";
 connectAttr "place2dTexture1.o" "file1.uv";
 connectAttr "place2dTexture1.ofs" "file1.fs";
+connectAttr "lambert3.oc" "lambert3SG.ss";
+connectAttr "WallShape2.iog.og[0]" "lambert3SG.dsm" -na;
+connectAttr "WallShape2.iog.og[1]" "lambert3SG.dsm" -na;
+connectAttr "WallShape.iog" "lambert3SG.dsm" -na;
+connectAttr "Unit5_LabScene:DeskLampShape.iog" "lambert3SG.dsm" -na;
+connectAttr "FloorShape.iog" "lambert3SG.dsm" -na;
+connectAttr "groupId1.msg" "lambert3SG.gn" -na;
+connectAttr "groupId2.msg" "lambert3SG.gn" -na;
+connectAttr "lambert3SG.msg" "materialInfo2.sg";
+connectAttr "lambert3.msg" "materialInfo2.m";
+connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr ":standardSurface1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "lambert3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2.msg" ":defaultShaderList1.s" -na;
+connectAttr "lambert3.msg" ":defaultShaderList1.s" -na;
 connectAttr "Unit5_LabScene:place2dTexture1.msg" ":defaultRenderUtilityList1.u" 
 		-na;
 connectAttr "Unit4_CurvesLab:place2dTexture1.msg" ":defaultRenderUtilityList1.u"
@@ -10208,13 +10732,6 @@ connectAttr "aiAreaLightShape4.ltd" ":lightList1.l" -na;
 connectAttr "Unit5_LabScene:file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "Unit4_CurvesLab:file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "FloorShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WallShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "WallShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "WallShape2.iog.og[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "Unit5_LabScene:DeskLampShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight3.iog" ":defaultLightSet.dsm" -na;
