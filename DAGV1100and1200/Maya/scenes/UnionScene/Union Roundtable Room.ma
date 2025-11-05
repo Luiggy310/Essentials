@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Union Roundtable Room.ma
-//Last modified: Wed, Nov 05, 2025 03:52:57 PM
+//Last modified: Wed, Nov 05, 2025 04:17:31 PM
 //Codeset: 1252
 file -rdi 1 -ns "UnionChair" -rfn "UnionChairRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
@@ -24,6 +24,8 @@ file -rdi 1 -ns "UnionChair9" -rfn "UnionChairRN9" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
 file -rdi 1 -ns "UnionChair10" -rfn "UnionChairRN10" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
+file -rdi 1 -ns "MissionPage" -rfn "MissionPageRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/MissionPage.ma";
 file -r -ns "UnionChair" -dr 1 -rfn "UnionChairRN" -op "v=0;" -typ "mayaAscii" "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
 file -r -ns "UnionChair1" -dr 1 -rfn "UnionChairRN1" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
@@ -45,6 +47,8 @@ file -r -ns "UnionChair9" -dr 1 -rfn "UnionChairRN9" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
 file -r -ns "UnionChair10" -dr 1 -rfn "UnionChairRN10" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
+file -r -ns "MissionPage" -dr 1 -rfn "MissionPageRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/MissionPage.ma";
 requires maya "2025ff03";
 requires -nodeType "polyDisc" "modelingToolkit" "0.0.0.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -55,24 +59,23 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "0256E9B5-4D1C-D093-6AC6-DABC3778C699";
+fileInfo "UUID" "BAE053FE-4179-3148-D1D2-80BA934305A0";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "077F403F-404F-0027-B215-3CA478215C60";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.80612253291648828 43.122242161700697 40.134810207097964 ;
-	setAttr ".r" -type "double3" -45.000000000000007 0 0 ;
-	setAttr ".rp" -type "double3" 1.2621774483536189e-29 0 0 ;
-	setAttr ".rpt" -type "double3" -1.6097103433939609e-15 1.587975265010827e-15 -2.2370423992060211e-15 ;
+	setAttr ".t" -type "double3" 0.30855034871398773 30.677469880051426 27.140742612671222 ;
+	setAttr ".r" -type "double3" -45.000000000000014 0 0 ;
+	setAttr ".rpt" -type "double3" -1.6497540571881504e-15 1.6669735975952961e-15 -2.2289187356903671e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1ABDE89B-4E22-31EF-C30F-C9A907094BC0";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 51.495686967928656;
+	setAttr ".coi" 33.507710786036597;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -6.2255643063543137e-14 10.431153455034661 2.8421709430404007e-14 ;
+	setAttr ".tp" -type "double3" -3.2031534206814924e-20 10.431153455034661 2.8421709430404007e-14 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "5F246C39-431A-5394-69F3-0CB184EEA4C1";
@@ -1364,6 +1367,13 @@ createNode reference -n "UnionChairRN10";
 		2 "|UnionChairs|UnionChair10:UnionChair01" "rotatePivotTranslate" " -type \"double3\" 0.98252851389894225 0 0.28917386733253536";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "MissionPageRN";
+	rename -uid "58D83F81-4CC9-34A7-7006-29BF49B04294";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"MissionPageRN"
+		"MissionPageRN" 0;
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1390,7 +1400,7 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 40 ".dsm";
+	setAttr -s 41 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
