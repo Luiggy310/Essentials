@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Union Roundtable Room1.ma
-//Last modified: Thu, Dec 04, 2025 06:22:07 PM
+//Last modified: Thu, Dec 04, 2025 06:23:57 PM
 //Codeset: 1252
 file -rdi 1 -ns "UnionChair" -rfn "UnionChairRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/11037169/Documents/GitHub/Essentials/DAGV1100and1200/Maya/scenes/UnionScene/UnionChair.ma";
@@ -80,7 +80,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "722AF8E3-4F17-7C5D-BD60-E9845EDD377B";
+fileInfo "UUID" "007E340F-42BD-A6E7-B53F-269F99EDDFCB";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "077F403F-404F-0027-B215-3CA478215C60";
@@ -1116,7 +1116,7 @@ createNode mesh -n "Wall_FloorShape" -p "Wall_Floor";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.62952608909517227 0.63606181047015287 ;
+	setAttr ".pv" -type "double2" 0.35096018016338348 0.40865346789360046 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
