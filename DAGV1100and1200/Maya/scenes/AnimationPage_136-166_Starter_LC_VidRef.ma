@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: AnimationPage_136-166_Starter_LC_VidRef.ma
-//Last modified: Fri, Mar 27, 2026 11:00:56 PM
+//Last modified: Fri, Mar 27, 2026 11:06:02 PM
 //Codeset: 1252
 file -rdi 1 -ns "Ultimate_Bony_v1_0_5" -dr 1 -rfn "Ultimate_Bony_v1_0_5RN" -op
 		 "v=0;" -typ "mayaAscii" "/Users/anthonyromrell/GitRepos/Essentials/DAGV1100and1200/Maya//scenes/Rigs/Ultimate_Bony_v1.0.5.ma";
@@ -19,13 +19,13 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "2E90890C-4DA9-4895-F9AE-CAA95C9027A3";
+fileInfo "UUID" "833AC49D-4E1A-6EDC-7D25-2CA704F94BA5";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "A99A115B-2B40-A95A-EB94-24A6C71E6B67";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -4.1566821485696801 6.752269282493188 24.566342739463757 ;
-	setAttr ".r" -type "double3" -6.9383527296179661 -7.7999999999959204 2.0064103041282125e-16 ;
+	setAttr ".t" -type "double3" -6.5464458149211815 4.6925095297182988 24.285244438046057 ;
+	setAttr ".r" -type "double3" -2.1383527296179783 -13.39999999999619 -1.0217392929056412e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "23F191FC-AA4C-36B2-3112-5F83AEC65EF3";
 	setAttr -k off ".v" no;
@@ -2240,8 +2240,8 @@ createNode animCurveTU -n "Beefy_rElbowIKC_Follow";
 	setAttr -s 4 ".ktv[0:3]"  50 0 75 0 100 0 129 0;
 	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
 select -ne :time1;
-	setAttr ".o" 129;
-	setAttr ".unw" 129;
+	setAttr ".o" 10;
+	setAttr ".unw" 10;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
