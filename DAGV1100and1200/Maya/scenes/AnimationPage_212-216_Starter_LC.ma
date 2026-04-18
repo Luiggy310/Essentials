@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: AnimationPage_212-216_Starter_LC.ma
-//Last modified: Fri, Apr 17, 2026 10:18:00 PM
+//Last modified: Fri, Apr 17, 2026 10:32:46 PM
 //Codeset: 1252
 file -rdi 1 -ns "Ultimate_Bony_v1_0_5" -rfn "Ultimate_Bony_v1_0_5RN" -op "v=0;"
 		 -typ "mayaAscii" "/Users/anthonyromrell/GitRepos/Essentials/DAGV1100and1200/Maya//scenes/Rigs/Ultimate_Bony_v1.0.5.ma";
@@ -18,7 +18,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "20D0C4A9-4955-F1D2-309F-70B9B35F8313";
+fileInfo "UUID" "F8FA801A-4DC9-7510-DC95-33BFC05617BE";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "A99A115B-2B40-A95A-EB94-24A6C71E6B67";
